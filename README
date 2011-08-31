@@ -1,2 +1,11 @@
-Geekbusters - A Rails 3.1 Mongoid Example Application
-Who are you going to call?
+#Geekbusters - A Rails 3.1 Mongoid Example Application
+## Who are you going to call?
+
+##Installation
+1. Create new rails application
+'''ruby
+rails new Geekbusters -T -O
+'''
+
+Since the application uses RSpec, we will not include adding test files '-T'.
+Skip including Active Records with '-O'
