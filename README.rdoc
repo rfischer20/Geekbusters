@@ -1,8 +1,3 @@
-Overview
-========
-
-=== Who are you going to call?
-
 = Installation
 
 == Prereqs
@@ -31,15 +26,67 @@ Add RSpec for testing and mongoid-rspec for rspec matchers
     gem 'mongoid-rspec', :require => false
   end
 
+install rspec
+  rails g rspec:install
+
+GOTO spec_helper.rb
+delete
+  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.use_transactional_fixtures = true
+
+And add under 'respec/rails'
+    require 'mongoid-rspec'
+
 Configure rails application for mongodb
 rails g mongoid:config
+
+Need to configure test to clean database after each run
+
+Add to Gemfile
+  gem 'database_cleaner'
+
+
+then add the following to RSpec.configure in /spec/spec_helper.rb
+  config.before(:each) do
+    DatabaseCleaner.clean
+  end
 
 startup mongodb - mongod
 start rails server - rails s
 
-OPTIONAL - using the new twitter boostrap to get a nice design right up front
+== OPTIONAL - using the new twitter boostrap to get a nice design right up front
 Download file https://github.com/twitter/bootstrap
 Add boostrap-1.1.1.css to /app/assets/stylesheets
+
+== OPTIONAL setup testing environment
+I use:
+* FactoryGirl(https://github.com/thoughtbot/factory_girl)
+* Spork(https://github.com/timcharper/spork)
+* Autotest(https://github.com/seattlerb/autotest-rails)
+
+To setup let's first get spork installed.
+  gem 'spork', '~> 0.9.0.rc'
+  bundle install
+  spork --bootstrap
+
+Go to spec/spec_helper.rb and follow the instructions
+To start spork just type
+  spork
+
+To install autotest -
+  gem "ZenTest"
+  gem "autotest-rails"
+
+type autoest to run
+
+To install FactoryGirl=
+  gem "factory_girl"
+
+Add the following to spec/spec_helper.rb
+  require 'factory_girl'
+  Dir.glob(Rails.root.join("spec", "factories", "*.rb").to_s).each do |f|
+    require f
+  end
 
 Delete public/index.html - pesky little startup file
 
@@ -58,6 +105,11 @@ Fields available for a Mongoid::Document
 * String
 * Symbol
 * Time
+
+Add the following fields to the model
+  field :first_name, type: String
+  field :last_name, type: String
+  field :skills, type: Array
 
 
 
