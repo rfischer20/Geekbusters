@@ -9,8 +9,8 @@ programming with Rails and Mongoid
 = Installation
 
 == Prereqs
-Ruby 1.9.2
-working installation of MongoDB www.mongodb.com
+* Ruby 1.9.2
+* Working installation of MongoDB www.mongodb.com
 
 Create new rails application
   rails new Geekbusters -T -O
