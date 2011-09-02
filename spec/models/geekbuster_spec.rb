@@ -4,6 +4,6 @@ describe Geekbuster do
   let(:geekbuster){ Factory.create(:geekbuster) }
   
   it "should create geekbuster" do
-    geekbuster.id.should_not be_nil
+    geekbuster.should be_persisted
   end
 end

@@ -1,0 +1,19 @@
+<%= form_for @geekbuster do |f| %>
+	<fieldset>
+		<div class="clearfix">
+			<%= f.label :first_name, :class=>"xlInput" %>
+			<div class="input">
+				<%= f.text_field :first_name, :class=>"xlInput" %>
+			</div>
+		</div>
+		<div class="clearfix">
+			<%= f.label :last_name, :class=>"xlInput" %>
+			<div class="input">
+				<%= f.text_field :last_name, :class=>"xlInput" %>
+			</div>
+		</div>		
+		<div class="actions">
+            <button type="submit" class="btn primary">Save Changes</button>
+         </div>	
+	</fieldset>
+<% end %>

@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="span8 columns">
+		<h1>
+			Geekbuster 
+			<small><%= link_to 'Edit', edit_geekbuster_path %></small>
+			<small><%= link_to 'Delete', geekbuster_path, 
+								  :confirm => 'Are you sure you want to delete?',
+								  :method => :delete %></small>			
+		</h1>
+		<table class="zebra-striped">
+			<tbody>
+				<tr>
+					<td><strong>First Name</strong></td>
+					<td><%= @geekbuster.first_name %></td>
+				</tr>
+				<tr>
+					<td><strong>Last Name</strong></td>
+					<td><%= @geekbuster.last_name %></td>
+				</tr>				
+			</tbody>
+		</table>
+	</div>
+</div>	

@@ -1,13 +1,19 @@
+= Work In Progress
+
+= Geekbusters - An example app for Rails 3.1 with Mongoid
+Geekbusters allows a person to find geeks with skills.
+
+Geekbusters Part 2 & 3 will include location based search using MongoDB and advanced 
+programming with Rails and Mongoid
+
 = Installation
 
 == Prereqs
 Ruby 1.9.2
 working installation of MongoDB www.mongodb.com
 
-1. Create new rails application
-'''ruby
-rails new Geekbusters -T -O
-'''
+Create new rails application
+  rails new Geekbusters -T -O
 
 Since the application uses RSpec, we will not include adding test files '-T'.
 Skip including Active Records with '-O'
@@ -93,23 +99,30 @@ Delete public/index.html - pesky little startup file
 Create first model - Geekbuster
 
 Fields available for a Mongoid::Document
-* Array
-* BigDecimal
-* Boolean
-* Date
-* DateTime
-* Float
-* Hash
-* Integer
-* Range
-* String
-* Symbol
-* Time
+  Array
+  BigDecimal
+  Boolean
+  Date
+  DateTime
+  Float
+  Hash
+  Integer
+  Range
+  String
+  Symbol
+  Time
 
 Add the following fields to the model
   field :first_name, type: String
   field :last_name, type: String
   field :skills, type: Array
+
+Lets create the controller
+  rails g controller Geekbusters
+
+Add to routes.rb
+  resources :geekbusters
+
 
 
 
