@@ -9,10 +9,6 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'mongoid-rspec'
-  require 'factory_girl'
-  Dir.glob(Rails.root.join("spec", "factories", "*.rb").to_s).each do |f|
-    require f
-  end
   
 
   # Requires supporting ruby files with custom matchers and macros, etc,
@@ -34,6 +30,11 @@ end
 Spork.each_run do
   # This code will be run each time you run your specs.
   # This code will be run each time you run your specs.
+  require 'factory_girl'
+  Dir.glob(Rails.root.join("spec", "factories", "*.rb").to_s).each do |f|
+    require f
+  end  
+  
   load "#{Rails.root}/config/routes.rb" 
   Dir["#{Rails.root}/app/**/*.rb"].each { |f| load f }
   

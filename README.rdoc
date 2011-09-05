@@ -117,11 +117,52 @@ Add the following fields to the model
   field :last_name, type: String
   field :skills, type: Array
 
+Add validation to the model. Mongoid uses ActiveModel::Validation
+  
+
+
 Lets create the controller
   rails g controller Geekbusters
 
 Add to routes.rb
   resources :geekbusters
+
+Generate Address model
+  rails g model Address
+
+Add fields to the model
+  field :address_line1, type: String
+  field :address_line2, type: String
+  field :city, type: String
+  field :state, type: String
+  field :zipcode, type: String
+
+Add association to Geekbuster with Address. The relation will be an embedded relation.
+
+add to Geekbuster.rb
+  embeds_one :address
+
+add to Address.rb
+  embedded_in :geekbuster
+
+All geekbusters have the option to belong to a team or freelance of course. Let's go ahead and
+create a team object.
+  rails g model Team
+
+Add these fields to the model
+  field :name, type: String
+
+We now have to associate team with geekbusters with a 1..N relation. It will not be embedded but 
+referenced. 
+
+Add to team.rb
+  has_many :geekbusters
+
+Add to geekbuster.rb
+  belongs_to :team
+
+
+
 
 
 
