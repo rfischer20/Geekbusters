@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :geekbuster do
     first_name "Peter"
     last_name "Venkman"
+    skills ["rails", "mongodb", "html"]
   end
   
   factory :geekbuster_team, :parent => :geekbuster do

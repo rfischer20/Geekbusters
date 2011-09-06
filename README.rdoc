@@ -161,7 +161,8 @@ Add to team.rb
 Add to geekbuster.rb
   belongs_to :team
 
-
+Nested attributes are on by default for embedded documents. For referenced, you need to add it
+to the model 
 
 
 

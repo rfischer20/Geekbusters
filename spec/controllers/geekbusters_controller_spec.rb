@@ -37,6 +37,10 @@ describe GeekbustersController do
       Geekbuster.all.length.should == 1
     end
     
+    # it "should add address" do
+    #   
+    # end
+    
     it "should redirect" do
       response.should be_redirect      
     end

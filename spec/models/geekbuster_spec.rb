@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Geekbuster do
   let(:geekbuster){ Factory(:geekbuster) }
   let(:geekbuster_team){ Factory(:geekbuster_team) }
+  let(:team){ Factory(:team) }
   
   it "should create geekbuster" do
     geekbuster.should be_persisted

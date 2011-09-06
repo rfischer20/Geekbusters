@@ -16,7 +16,11 @@
 				<tr>
 					<td><strong>Last Name</strong></td>
 					<td><%= @geekbuster.last_name %></td>
-				</tr>				
+				</tr>	
+				<tr>
+					<td><strong>Skills</strong></td>
+					<td><%= @geekbuster.skills.to_sentence %></td>
+				</tr>							
 			</tbody>
 		</table>
 	</div>
