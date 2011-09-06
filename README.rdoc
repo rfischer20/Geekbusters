@@ -1,5 +1,12 @@
 = Work In Progress
 
+= Goal of Geekbusters
+Provide a semi real world example of an application using Rails 3.1 and Mongoid. It would be awesome if anyone would 
+like to contribute to the example and make and suggestions/contributions. Besides bringing this tutorial more to life, 
+there is commenting through the code needed and I would like to offer the same example with ActiveRecord.
+
+More to come! Get in touch with me at http://www.20spokes.com and my twitter name is @ryanfischer20
+
 = Geekbusters - An example app for Rails 3.1 with Mongoid
 Geekbusters allows a person to find geeks with skills.
 
