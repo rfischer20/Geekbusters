@@ -1,5 +1,5 @@
 Geekbusters::Application.routes.draw do
-  resources :geekbusters
+  resources :geekbusters, :teams
 
   match 'search' => 'search#find', :via => [:get, :post], :as => :search
 

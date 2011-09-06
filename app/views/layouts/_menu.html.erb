@@ -3,7 +3,7 @@
 		<div class="container">
 			<h3><%= link_to "Geekbusters", root_path %></h3>
 			<ul>
-				<li class="active"><a href="#">Home</a></li>
+				<li><%= link_to "Teams", teams_path%></li>
 				<li><a href="#">About</a></li>				
 			</ul>
 			<%= form_tag("/search", :method => "get") do %>

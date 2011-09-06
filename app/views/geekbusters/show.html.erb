@@ -20,7 +20,32 @@
 				<tr>
 					<td><strong>Skills</strong></td>
 					<td><%= @geekbuster.skills.to_sentence unless @geekbuster.skills.blank? %></td>
-				</tr>							
+				</tr>	
+				<tr>
+					<td><strong>Team</strong></td>
+					<td><%= link_to @geekbuster.team.name, @geekbuster.team unless @geekbuster.team.nil? %></td>
+				</tr>										
+				<% unless @geekbuster.address.blank? %>
+				<tr>
+					<td><strong>Address</strong></td>
+					<td>
+						<%= @geekbuster.address.address_line1 %>
+					    <%= "<br/>#{@geekbuster.address.address_line2}".html_safe unless @geekbuster.address.address_line2.blank?%> 
+					</td>
+				</tr>
+				<tr>
+					<td><strong>City</strong></td>
+					<td><%= @geekbuster.address.city %></td>
+				</tr>	
+				<tr>
+					<td><strong>State</strong></td>
+					<td><%= @geekbuster.address.state %></td>
+				</tr>				
+				<tr>
+					<td><strong>Zipcode</strong></td>
+					<td><%= @geekbuster.address.zipcode %></td>
+				</tr>				
+				<% end %>
 			</tbody>
 		</table>
 	</div>

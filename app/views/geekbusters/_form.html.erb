@@ -1,5 +1,16 @@
 <%= form_for @geekbuster do |f| %>
 	<fieldset>
+		<% if @geekbuster.errors.any? %>
+			<div class="alert-message warning">
+				<h3>Please fix the following errors</h3>
+				<ul>
+				<% @geekbuster.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+				</ul>
+		    </div>
+		<% end %>
+		
 		<div class="clearfix">
 			<%= f.label :first_name, :class=>"xlInput" %>
 			<div class="input">
@@ -18,8 +29,49 @@
 				<%= f.select :skills, ["Rails", "MongoDB", "Java", "HTML", "CSS", "Project Management", "PHP", "Java"], {}, :class => "multiple", :multiple => true %>
 			</div>
 		</div>
+		<div calss="clearfix">	
+			<%= f.label :team %>
+			<div class="input">
+				<%= f.select :team_id, Team.order_by("name ASC").collect { |i| [i.name, i.id] },
+					{:include_blank => true},  :class => "normalSelect" %>
+			</div>
+		</div>		
+
+		
+	<%= f.fields_for :address do |a| %>
+		<div class="clearfix">
+			<%= a.label :address_line1, :class=>"xlInput" %>
+			<div class="input">
+				<%= a.text_field :address_line1, :class=>"xlInput" %>
+			</div>
+		</div>
+		<div class="clearfix">
+			<%= a.label :address_line2, :class=>"xlInput" %>
+			<div class="input">
+				<%= a.text_field :address_line2, :class=>"xlInput" %>
+			</div>
+		</div>
+		<div class="clearfix">
+			<%= a.label :city, :class=>"xlInput" %>
+			<div class="input">
+				<%= a.text_field :city, :class=>"xlInput" %>
+			</div>
+		</div>
+		<div class="clearfix">
+			<%= a.label :state, :class=>"xlInput" %>
+			<div class="input">
+				<%= a.text_field :state, :class=>"xlInput" %>
+			</div>
+		</div>
+		<div class="clearfix">
+			<%= a.label :zipcode, :class=>"xlInput" %>
+			<div class="input">
+				<%= a.text_field :zipcode, :class=>"xlInput" %>
+			</div>
+		</div>	
+	<% end %>				
 		<div class="actions">
-            <button type="submit" class="btn primary">Save Changes</button>
-         </div>	
+	        <button type="submit" class="btn primary">Save Changes</button>
+	     </div>	
 	</fieldset>
 <% end %>

@@ -15,7 +15,7 @@ FactoryGirl.define do
     city "Chicago"
     state "IL"
     zipcode "60613"
-    association :geekbuster
+    association :addressable, :factory => :geekbuster
   end
   
   factory :team do

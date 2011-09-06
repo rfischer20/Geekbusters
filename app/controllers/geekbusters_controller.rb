@@ -5,12 +5,17 @@ class GeekbustersController < ApplicationController
   
   def new
     @geekbuster = Geekbuster.new
+    @geekbuster.address = Address.new
   end
   
   def create
-    @geekbuster = Geekbuster.create(params[:geekbuster])
+    @geekbuster = Geekbuster.new(params[:geekbuster])
     
-    redirect_to @geekbuster
+    if @geekbuster.save
+      redirect_to @geekbuster
+    else
+      render :action => "new"
+    end
   end
   
   def show
