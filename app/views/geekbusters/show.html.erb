@@ -19,7 +19,7 @@
 				</tr>	
 				<tr>
 					<td><strong>Skills</strong></td>
-					<td><%= @geekbuster.skills.to_sentence %></td>
+					<td><%= @geekbuster.skills.to_sentence unless @geekbuster.skills.blank? %></td>
 				</tr>							
 			</tbody>
 		</table>

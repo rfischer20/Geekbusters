@@ -6,9 +6,11 @@
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="#">About</a></li>				
 			</ul>
-			<form action="">
-			            <input type="text" placeholder="Search">
-            </form>			
+			<%= form_tag("/search", :method => "get") do %>
+				<%= text_field_tag(:query)%>
+				<button class="btn primary">Search</button>				
+		            <!-- <input type="text" placeholder="Search"> -->
+            <% end %>			
 		</div>
 	</div>
 </div>

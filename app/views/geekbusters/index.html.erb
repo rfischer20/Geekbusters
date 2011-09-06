@@ -7,6 +7,7 @@
 					<th>#</th>
 					<th>First Name</th>
 					<th>Last Name</th>
+					<th>Skills</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -15,6 +16,7 @@
 					<td><%= link_to i, g %></td>
 					<td><%= g.first_name %></td>
 					<td><%= g.last_name %></td>
+					<td><%= g.skills.to_sentence unless g.skills.blank? %></td>					
 				</tr>
 			<% end %>
 			</tbody>
