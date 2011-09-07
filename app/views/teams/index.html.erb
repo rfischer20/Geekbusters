@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="span8 columns">
+		<h1>Teams <small><%= link_to "Add", new_team_path %></small></h1>
+		<table class="zebra-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+				</tr>
+			</thead>
+			<tbody>
+			<% @teams.each_with_index do |t, i| %>
+				<tr>
+					<td><%= link_to i, t %></td>
+					<td><%= link_to t.name, t %></td>
+				</tr>
+			<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
