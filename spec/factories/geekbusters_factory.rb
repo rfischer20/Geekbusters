@@ -10,8 +10,8 @@ FactoryGirl.define do
   end
   
   factory :address do
-    address_line1 "1200 W. Addison St."
-    address_line2 "Apt. 1"
+    address_line1 "1060 West Addison St."
+    address_line2 "Wrigley Field"
     city "Chicago"
     state "IL"
     zipcode "60613"

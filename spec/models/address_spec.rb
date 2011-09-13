@@ -42,5 +42,9 @@ describe Address do
   it "should be invalid with no zipcode" do 
     address = Factory.build(:address, :zipcode => nil)
     address.should be_invalid
-  end  
+  end 
+  
+  it "should geocode address" do
+    address.coordinates.should_not be_empty
+  end 
 end

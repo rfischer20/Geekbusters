@@ -8,6 +8,8 @@ gem 'rdoc'
 
 gem 'spork', '~> 0.9.0.rc'
 
+gem "geocoder"
+
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
